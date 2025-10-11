@@ -1,0 +1,44 @@
+.main {
+    display: block;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.button {
+    cursor: pointer;
+    background-color: blueviolet;
+    padding: 10px;
+    color: white;
+
+}
+
+.hovered {
+    color: white;
+    background-color: black;
+    padding: 4px;
+    width: 50px;
+    display: none;
+    position: absolute;
+    top: 70%;
+    left: 48%;
+}
+
+.button:hover +.hovered {
+    display: block;
+}
+
+.checkBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+.checkBox input{
+    cursor:pointer;
+}
+
+input:checked {
+    outline: 2px solid deeppink;
+    cursor: pointer;
+}
