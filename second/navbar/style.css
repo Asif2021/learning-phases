@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     background-color: #f2f2f2;
     font-family: 'Roboto Condensed', sans-serif;
@@ -46,7 +45,8 @@ body {
 .nav_links a:active {
     color: cyan;
 }
-.nav_rightside_buttons{
+
+.nav_rightside_buttons {
     display: flex;
     gap: clamp(1rem, 5vw, 5rem);
 }
@@ -80,21 +80,25 @@ body {
 }
 
 .mobile_menu_icon {
-    display: none;    
+    display: none;
 }
+
 
 @media (width < 600px) {
     .mobile_menu_icon {
         display: flex;
     }
-    .navbar{
+
+    .navbar {
         display: flex;
         justify-content: space-between;
     }
-    .nav_links{
+
+    .nav_links {
         display: none;
     }
-    .nav_rightside_buttons{
+
+    .nav_rightside_buttons {
         display: none;
     }
 }
