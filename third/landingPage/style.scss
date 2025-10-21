@@ -12,12 +12,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
     max-width: 1440px;
     margin: auto;
     padding: 20px 10px;
     background: transparent;
     h1{
-        color: $text_color;
+        color: $text_color_normal;
     }
     ul{
         display: flex;
@@ -26,7 +29,7 @@
             margin: 0 15px;
             a{
                 text-decoration:none;
-                color: $text_color;
+                color: $text_color_normal;
                 font-weight: 500;
                 font-size: clamp(1rem, 2vw, 1.5rem);
                 transition: linear 0.3s ease-in-out;
@@ -45,8 +48,40 @@
         }
         svg{
             display: block;
-            color: $text_color;
+            color: $text_color_normal;
             
         }
+    }
+}
+
+// hero section styles
+.hero_section{
+    background: url("/assets//img//header-bg.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $text_color_normal;
+    text-transform: uppercase;
+    gap: 30px;
+    h3{
+        font-size: clamp( 1.4rem, 4vw, 2.5rem );
+    }
+    h1{
+        font-size: clamp( 2rem, 8vw, 5rem);
+    }
+    button{
+        padding: 15px 30px;
+        font-size: clamp( 1rem, 2vw, 1.5rem );
+        background-color: #FFC107;
+        color: $text_color_normal;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
     }
 }

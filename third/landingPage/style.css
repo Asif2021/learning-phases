@@ -8,13 +8,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   max-width: 1440px;
   margin: auto;
   padding: 20px 10px;
   background: transparent;
 }
 .navbar h1 {
-  color: black;
+  color: rgba(240, 233, 233, 0.9647058824);
 }
 .navbar ul {
   display: flex;
@@ -25,7 +28,7 @@
 }
 .navbar ul li a {
   text-decoration: none;
-  color: black;
+  color: rgba(240, 233, 233, 0.9647058824);
   font-weight: 500;
   font-size: clamp(1rem, 2vw, 1.5rem);
   transition: linear 0.3s ease-in-out;
@@ -42,6 +45,37 @@
   }
   .navbar svg {
     display: block;
-    color: black;
+    color: rgba(240, 233, 233, 0.9647058824);
   }
+}
+
+.hero_section {
+  background: url("/assets//img//header-bg.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgba(240, 233, 233, 0.9647058824);
+  text-transform: uppercase;
+  gap: 30px;
+}
+.hero_section h3 {
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
+}
+.hero_section h1 {
+  font-size: clamp(2rem, 8vw, 5rem);
+}
+.hero_section button {
+  padding: 15px 30px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  background-color: #FFC107;
+  color: rgba(240, 233, 233, 0.9647058824);
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
