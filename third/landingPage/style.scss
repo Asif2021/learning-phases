@@ -1,6 +1,6 @@
-@import "../landingPage//variables";
+@import "./variables";
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,80 +8,142 @@
 
 
 // navbar styles
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar_container {
+    width: 100%;
+    background-color: #26252A;
     position: sticky;
     top: 0;
     z-index: 1;
+}
+
+.navbar {
+    @include flexCenter(space-between, row);
     max-width: 1440px;
     margin: auto;
     padding: 20px 10px;
-    background: transparent;
-    h1{
-        color: $text_color_normal;
+
+    h1 {
+        color: $btn_bg_color;
     }
-    ul{
+
+    ul {
         display: flex;
         list-style: none;
-        li{
+
+        li {
             margin: 0 15px;
-            a{
-                text-decoration:none;
+
+            a {
+                text-decoration: none;
                 color: $text_color_normal;
                 font-weight: 500;
                 font-size: clamp(1rem, 2vw, 1.5rem);
                 transition: linear 0.3s ease-in-out;
-                &:hover{
+
+                &:hover {
                     color: #25D94C;
                 }
-            };
+            }
+
+            ;
         }
     }
-    svg{
+
+    svg {
         display: none;
     }
-    @media (max-width: 768px){
-        ul{
-            display:none;
+
+    @media (max-width: 768px) {
+        ul {
+            display: none;
         }
-        svg{
+
+        svg {
             display: block;
             color: $text_color_normal;
-            
+
         }
     }
 }
 
 // hero section styles
-.hero_section{
-    background: url("/assets//img//header-bg.jpg");
+.hero_section {
+    background: url("/assets/img//header-bg.jpg");
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-size: cover;
-    position: fixed;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flexCenter(center, column);
     color: $text_color_normal;
     text-transform: uppercase;
     gap: 30px;
-    h3{
-        font-size: clamp( 1.4rem, 4vw, 2.5rem );
+
+    h3 {
+        font-size: clamp(1.4rem, 4vw, 2.5rem);
     }
-    h1{
-        font-size: clamp( 2rem, 8vw, 5rem);
+
+    h1 {
+        font-size: clamp(2rem, 8vw, 5rem);
     }
-    button{
+
+    button {
         padding: 15px 30px;
-        font-size: clamp( 1rem, 2vw, 1.5rem );
-        background-color: #FFC107;
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        background-color: $btn_bg_color;
         color: $text_color_normal;
         border-radius: 5px;
         text-transform: uppercase;
         font-weight: bold;
+    }
+}
+
+//services section styles
+.service_section {
+    width: 100%;
+    margin: 5rem 0;
+    padding: 10px 20px;
+
+    h1 {
+        text-align: center;
+        font-size: $headings_size;
+        text-transform: uppercase;
+    }
+
+    p {
+        text-align: center;
+        font-size: $paragraph_size;
+    }
+
+    .services_inner {
+        @include flexCenter(center, row);
+        gap: 3rem;
+        padding: 0px 10px;
+        margin: 5rem 0;
+
+        .svg_div{
+            padding: 2rem;
+            background-color: $btn_bg_color;
+            border-radius: 100%;
+        }   
+        .svg_div svg {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        h1 {
+            font-size: clamp(1rem, 2vw, 3rem);
+            text-transform: uppercase;
+        }
+
+        .services_mostInner {
+            @include flexCenter(center, column);
+            gap: 1rem;
+            padding: 0px 20px;
+        }
+
+    }
+    @media (max-width: 768px) {
+    .services_inner{
+        flex-direction: column;
+    }        
     }
 }

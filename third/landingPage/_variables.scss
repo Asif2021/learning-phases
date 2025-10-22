@@ -1,2 +1,12 @@
 $text_color_normal: #f0e9e9f6;
-$text_color_black: #000000
+$text_color_black: #000000;
+$btn_bg_color: #FFC107;
+$headings_size: clamp(2rem, 5vw, 4rem);
+$paragraph_size: clamp(1rem, 1.2vw, 1.5rem);
+
+@mixin flexCenter ($justify, $dir){
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $dir;
+}
