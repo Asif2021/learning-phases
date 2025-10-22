@@ -203,4 +203,46 @@
     max-width: 100%;
     height: auto;
   }
+}
+
+.team_section {
+  max-width: 1440px;
+  margin-top: 10rem;
+  text-align: center;
+}
+.team_section h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+}
+.team_section p {
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
+  padding-bottom: 3rem;
+}
+.team_section .team_members {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.team_section .team_members img {
+  width: clamp(8rem, 15vw, 12rem);
+  height: clamp(8rem, 15vw, 12rem);
+  border-radius: 100%;
+}
+.team_section .team_members h2 {
+  font-size: 2rem;
+  padding: 10px 0;
+}
+.team_section .team_paragraph {
+  width: 70%;
+  margin: auto;
+  font-size: clamp(1rem, 2vw, 3rem);
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .team_section .team_members {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=style.css.map */
