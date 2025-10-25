@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 
@@ -35,11 +36,11 @@
 
             a {
                 text-decoration: none;
-                color: $text_color_normal;
+                color: var(--text-color-white);
                 font-weight: 500;
                 font-size: clamp(1rem, 2vw, 1.5rem);
                 transition: linear 0.3s ease-in-out;
-
+                filter: brightness(1.5);
                 &:hover {
                     color: #25D94C;
                 }
@@ -49,50 +50,126 @@
         }
     }
 
-    svg {
+    .navbar_buttons {
+        display: flex;
+        gap: 16px;
+    }
+
+    .getStarted_button {
+        display: block;
+        padding: clamp(0.5rem, 1vw, 1.5rem) clamp(1rem, 1.5vw, 2rem);
+        border-radius: 5px;
+        font-size: clamp(0.8rem, 1vw, 1.5rem);
+        font-weight: 600;
+        cursor: pointer;
+        border: rgb(62, 62, 62);
+        color: var(--text-color-black);
+        background-color: var(--background-color);
+    }
+
+    .menu_svg {
         display: none;
     }
+
+    // theme_switch styles
+   #theme_switch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+
+   }
+   #theme_switch svg{
+    fill: $btn_bg_color;
+   }
+
+   #theme_switch svg:last-child{
+    display: none;
+   }
+  
 
     @media (max-width: 768px) {
         ul {
             display: none;
         }
 
-        svg {
-            display: block;
-            color: $text_color_normal;
+        .getStarted_button {
+            display: none;
+        }
 
+        .menu_svg {
+            display: block;
+            color: var(--text-color-white);;
+        }
+
+        #theme_switch {
+            display: none;
         }
     }
 }
 
 // hero section styles
 .hero_section {
-    background: url("/assets/img//header-bg.jpg");
-    height: 100vh;
+    max-width: 1440px;
+    margin: auto;
     width: 100%;
-    background-size: cover;
-    @include flexCenter(center, column);
-    color: $text_color_normal;
+    @include flexCenter(center, row);
+    color: var(--text-color-black);
     text-transform: uppercase;
     gap: 30px;
+    padding: 8px;
+
+    
+    .hero_right{
+        width: 50%;
+        @include flexCenter(center, column);
+        gap: 16px;
+        text-align: center;
 
     h3 {
-        font-size: clamp(1.4rem, 4vw, 2.5rem);
-    }
+        font-size: clamp(0.7rem, 2.5vw, 2rem);
+        }
 
     h1 {
-        font-size: clamp(2rem, 8vw, 5rem);
-    }
+        font-size: clamp(1rem, 4vw, 3rem)}
 
     button {
-        padding: 15px 30px;
-        font-size: clamp(1rem, 2vw, 1.5rem);
+        padding: clamp(0.7rem, 1.5vw, 2rem) clamp(1.2rem, 3vw, 3rem);
+        font-size: clamp(0.7rem, 1.5vw, 1rem);
         background-color: $btn_bg_color;
-        color: $text_color_normal;
+        color: var(--text-color-white);;
         border-radius: 5px;
         text-transform: uppercase;
         font-weight: bold;
+        cursor: pointer;
+        border: none;
+    }
+    }
+    .hero_left{
+        width: 50%;
+        height: auto;
+        img{
+            height: auto;
+            width: 100%;
+            object-fit: cover;
+            padding: 16px;
+            }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;        
+        .hero_left{
+            width: 100%;
+            }
+        .hero_right{
+            width: 100%;
+        }
     }
 }
 
@@ -100,7 +177,12 @@
 .service_section {
     width: 100%;
     margin: 5rem 0;
-    padding: 10px 20px;
+    padding: 5px 20px;
+    color: var(--text-color-black);
+.service_headings{
+    @include flexCenter(center, column);
+    gap: 16px;
+}
 
     h1 {
         text-align: center;
@@ -117,7 +199,7 @@
         @include flexCenter(center, row);
         gap: 3rem;
         padding: 0px 10px;
-        margin: 5rem 0;
+        margin: 3rem 0;
 
         .svg_div {
             padding: 2rem;
@@ -156,8 +238,14 @@
     margin: 5rem 0;
     padding: 5rem 0;
     @include flexCenter(center, column);
-    background-color: #F8F9FA;
+    background-color: var(--background-color);
+    color: var(--text-color-black);
 
+    .portfolio_headings{
+        @include flexCenter(center, column);
+        gap: 16px; 
+        }
+    
     h1 {
         font-size: $headings_size;
         text-transform: uppercase;
@@ -182,7 +270,7 @@
         @include flexCenter(center, column);
         gap: 0.5rem;
         padding-bottom: 10px;
-
+        
         img {
             border-radius: 10px 10px 0 0;
             height: clamp(12rem, 18vw, 20rem);
@@ -197,7 +285,10 @@
 
         h5 {
             font-size: clamp(1rem, 1.5vw, 2rem);
-
+            color: black;
+        }
+        p{
+            color: black;
         }
 
         &:hover {
@@ -234,9 +325,14 @@
 // team section styles
 .team_section {
     max-width: 1440px;
-    margin-top: 10rem;
+    margin: clamp(3rem, 8vw, 10rem) auto;
     text-align: center;
-
+    padding: clamp(1rem, 2vw, 3rem);
+    color: var(--text-color-black);
+  .team_headings{
+        @include flexCenter(center, column);
+        gap: 16px; 
+        }
     h1 {
         font-size: $headings_size;
         text-transform: uppercase;
@@ -248,7 +344,7 @@
     }
 
     .team_members {
-        width: 70%;
+        width: 100%;
         margin: auto;
         @include flexCenter(space-between, row);
 
@@ -259,13 +355,13 @@
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 2.8vw, 3.5rem);
             padding: 10px 0;
         }
     }
 
     .team_paragraph {
-        width: 70%;
+        width: 100%;
         margin: auto;
         font-size: clamp(1rem, 2vw, 3rem);
         text-align: center;
@@ -274,6 +370,155 @@
     @media (max-width:768px) {
         .team_members {
             flex-direction: column;
+            justify-content: center;
         }
     }
 }
+
+// contact section styles
+.contact_section {
+    width: 100%;
+    max-width: 1440px;
+    height: 80vh;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 1);
+    background-image: url("/assets/img/map-image.png");
+    @include flexCenter(center, column);
+    gap: 3rem;
+    border-radius: 16px;
+
+    .contact_heading {
+        @include flexCenter(center, column);
+        gap: 16px;
+    }
+
+    h1 {
+        color: var(--text-color-white);;
+        text-transform: uppercase;
+        font-size: $headings_size;
+    }
+
+    p {
+        color: var(--text-color-white);;
+        font-size: $paragraph_size;
+        margin-bottom: 15px;
+    }
+
+    .contact_flex {
+        width: 80%;
+        max-width: 1440px;
+        height: 217px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: row;
+        gap: 15px;
+
+        .flex_input {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            input {
+                width: 100%;
+                height: 33.33%;
+                border-radius: 5px;
+                padding: 15px;
+                background-color: var(--text-color-white);;
+
+
+                &::placeholder {
+                    font-weight: bold;
+                    font-size: clamp(0.7rem, 1vw, 2rem);
+                }
+            }
+        }
+
+        .flex_textarea {
+            width: 50%;
+
+            textarea {
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                padding: 15px;
+                background-color: var(--text-color-white);;
+
+                &::placeholder {
+                    font-weight: bold;
+                    font-size: clamp(0.7rem, 1vw, 2rem);
+                }
+            }
+        }
+    }
+
+    button {
+        padding: clamp(0.7rem, 1.5vw, 2rem) clamp(1.2rem, 3vw, 3rem);
+        font-size: clamp(0.7rem, 1.5vw, 1rem);
+        background-color: $btn_bg_color;
+        color: var(--text-color-white);;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .contact_flex {
+            flex-direction: column;
+
+            .flex_input {
+                width: 100%;
+            }
+
+            .flex_textarea {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+// footer section styles
+.footer_section {
+    max-width: 1440px;
+    margin: auto;
+    padding: clamp(1rem, 1.5vw, 3rem);
+    @include flexCenter(space-between, row);
+    font-size: clamp(1rem, 1.5vw, 3rem);
+    gap: 12px;
+    color: var(--text-color-black);
+    .facebook {
+        cursor: pointer;
+        color: #1877F2;
+    }
+
+    .whatsapp {
+        cursor: pointer;
+        color: #075e54;
+    }
+
+    .twitter {
+        cursor: pointer;
+        color: #1DA1F2;
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+
+    }
+
+}
+
+
+// toggling icon 
+ .darkmode #theme_switch svg:first-child{
+    display: none;
+   }
+   .darkmode #theme_switch svg:last-child{
+    display: block;
+   }
+
+   

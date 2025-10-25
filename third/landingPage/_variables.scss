@@ -1,8 +1,24 @@
-$text_color_normal: #f0e9e9f6;
-$text_color_black: #000000;
 $btn_bg_color: #FFC107;
-$headings_size: clamp(2rem, 5vw, 4rem);
-$paragraph_size: clamp(1rem, 1.2vw, 1.5rem);
+$headings_size: clamp(2rem, 3.2vw, 4rem);
+$paragraph_size: clamp(1rem, 1.5vw, 2.5rem);
+
+
+// lightmode variables
+:root {
+  --text-color-normal: #f0e9e9f6;
+  --text-color-black: #000000;
+  --text-color-white: #ffffff;
+  --background-color: #F8F9FA;
+  --btn-bg-color: #FFC107;
+}
+
+.darkmode {
+  --text-color-normal: #fff;
+  --text-color-black: white;
+  --background-color: black;
+  --btn-bg-color: #FFC107; 
+  background-color: var(--background-color);
+}
 
 @mixin flexCenter ($justify, $dir){
     display: flex;

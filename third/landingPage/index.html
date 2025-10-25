@@ -4,11 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+  if (localStorage.getItem('darkmode') === 'active') {
+    document.documentElement.classList.add('darkmode');
+  }
+</script>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="index.js" defer></script>
     <title>Landing Page</title>
 </head>
 
-<body>
+<body class="darkmode">
     <div>
         <div class="main_container">
             <!-- navbar -->
@@ -22,25 +31,49 @@
                         <li><a href="#">Team</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                        fill="#fff">
-                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-                    </svg>
+                    <div class="navbar_buttons">
+                        <button id="theme_switch">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#1f1f1f">
+                                <path
+                                    d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#1f1f1f">
+                                <path
+                                    d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
+                            </svg>
+                        </button>
+                        <button class="getStarted_button">Get Started</button>
+                    </div>
+                    <div class="menu_svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#fff">
+                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                        </svg>
+                    </div>
                 </nav>
             </div>
 
             <!-- hero section -->
             <div class="hero_section">
-                <h3>welcome to our studio</h3>
-                <h1>it's nice to meet you</h1>
-                <button>tell me more</button>
+                <div class="hero_right">
+                    <h3>welcome to our studio</h3>
+                    <h1>it's nice to meet you</h1>
+                    <button>tell me more</button>
+                </div>
+                <div class="hero_left">
+                    <img src="/assets/img/1.jpg" alt="img">
+                </div>
+
             </div>
 
             <!-- services section -->
             <div class="service_section">
-
-                <h1>Services</h1>
-                <p>We are providing following services</p>
+                <div class="service_headings">
+                    <h1>Services</h1>
+                    <p>We are providing following services</p>
+                </div>
                 <div class="services_inner">
                     <div class="services_mostInner">
                         <div class="svg_div">
@@ -51,8 +84,7 @@
                         </div>
                         <h1>E-Commerce</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae accusamus numquam iure
-                            sit explicabo minus, quaerat veniam hic est ab sunt facilis voluptas provident perferendis
-                            pariatur doloribus officiis nostrum?</p>
+                            sit explicabo minus?</p>
                     </div>
                     <div class="services_mostInner">
                         <div class="svg_div">
@@ -64,8 +96,7 @@
                         </div>
                         <h1>Web Security</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae accusamus numquam iure
-                            sit explicabo minus, quaerat veniam hic est ab sunt facilis voluptas provident perferendis
-                            pariatur doloribus officiis nostrum?</p>
+                            sit explicabo minus?</p>
                     </div>
                     <div class="services_mostInner">
                         <div class="svg_div">
@@ -77,8 +108,7 @@
                         </div>
                         <h1>Responsive Design</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae accusamus numquam iure
-                            sit explicabo minus, quaerat veniam hic est ab sunt facilis voluptas provident perferendis
-                            pariatur doloribus officiis nostrum?</p>
+                            sit explicabo minus?</p>
                     </div>
 
                 </div>
@@ -90,8 +120,10 @@
 
             <!-- portfolio section -->
             <div class="portfolio_section">
-                <h1>portfolio</h1>
-                <p>This is portfolio section</p>
+                <div class="portfolio_headings">
+                    <h1>portfolio</h1>
+                    <p>This is portfolio section</p>
+                </div>
                 <div class="portfolio_grid">
                     <div class="grid_child">
                         <img src="/assets/img/portfolio/1.jpg" alt="img">
@@ -128,8 +160,10 @@
 
             <!-- team section -->
             <div class="team_section">
-                <h1>Our Amazing Team</h1>
-                <p>We have the best team</p>
+                <div class="team_headings">
+                    <h1>Our Amazing Team</h1>
+                    <p>We have the best team</p>
+                </div>
                 <div class="team_members">
                     <div>
                         <img src="/assets//img/team/1.jpg" alt="">
@@ -147,11 +181,43 @@
                         <p>Lead Designer</p>
                     </div>
                 </div>
-                <p class="team_paragraph"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis enim vel eaque dignissimos dolor
+                <p class="team_paragraph"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis enim vel
+                    eaque dignissimos dolor
                     a, ab repellat, saepe sint ea corporis alias ipsum odit dicta accusantium maxime fuga eum
                     laudantium?</p>
             </div>
-            
+
+            <!-- contact section -->
+            <div class="contact_section">
+                <div class="contact_heading">
+                    <h1>Contact Us</h1>
+                    <p>We are here for you always, contact us</p>
+                </div>
+                <div class="contact_flex">
+                    <div class="flex_input">
+                        <input type="text" placeholder="Your Name*">
+                        <input type="text" placeholder="Your Email*">
+                        <input type="text" placeholder="Your Phone*">
+                    </div>
+                    <div class="flex_textarea">
+                        <textarea name="" id="" placeholder="Your Message"></textarea>
+                    </div>
+
+                </div>
+                <button>Send Message</button>
+            </div>
+
+            <!-- footer section -->
+            <div class="footer_section">
+                <div>
+                    <p>© <span id="year"></span> All rights reserved</p>
+                </div>
+                <div><i class="fa-brands fa-facebook facebook"></i>
+                    <i class="fa-brands fa-whatsapp whatsapp"></i>
+                    <i class="fa-brands fa-x-twitter twitter"></i>
+                </div>
+                <div>Privacy Policy</div>
+            </div>
 
 
         </div>
