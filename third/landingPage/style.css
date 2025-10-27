@@ -23,7 +23,7 @@
 
 .navbar_container {
   width: 100%;
-  background-color: #26252A;
+  background: url("/assets/img/header-bg.png");
   position: sticky;
   top: 0;
   z-index: 1;
@@ -40,6 +40,8 @@
 }
 .navbar h1 {
   color: #FFC107;
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .navbar ul {
   display: flex;
@@ -55,9 +57,21 @@
   font-size: clamp(1rem, 2vw, 1.5rem);
   transition: linear 0.3s ease-in-out;
   filter: brightness(1.5);
+  position: relative;
+  transition: color 0.3s ease-in-out;
 }
-.navbar ul li a:hover {
-  color: #25D94C;
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #FFC107;
+  transition: width 0.3s ease-in-out;
+}
+.navbar ul li a:hover::after {
+  width: 100%;
 }
 .navbar .navbar_buttons {
   display: flex;
@@ -74,7 +88,7 @@
   color: var(--text-color-black);
   background-color: var(--background-color);
 }
-.navbar .menu_svg {
+.navbar .mobile_menu_svg {
   display: none;
 }
 .navbar #theme_switch {
@@ -97,17 +111,42 @@
 }
 @media (max-width: 768px) {
   .navbar ul {
-    display: none;
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    height: 100vh;
+    background: #000;
+    width: 100%;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    font-size: 3.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+  .navbar ul.active {
+    left: 0;
   }
   .navbar .getStarted_button {
     display: none;
   }
-  .navbar .menu_svg {
+  .navbar .mobile_menu_svg {
     display: block;
-    color: var(--text-color-white);
+    cursor: pointer;
+  }
+  .navbar svg {
+    display: none;
+  }
+  .navbar #menu_open {
+    display: block;
   }
   .navbar #theme_switch {
     display: none;
+  }
+  .navbar .mobile_menu_svg.active #menu_open {
+    display: none;
+  }
+  .navbar .mobile_menu_svg.active #menu_close {
+    display: block;
   }
 }
 
@@ -345,14 +384,15 @@
   align-items: center;
   flex-direction: row;
 }
-.team_section .team_members img {
+.team_section .team_members .member_child img {
   width: clamp(8rem, 15vw, 12rem);
   height: clamp(8rem, 15vw, 12rem);
   border-radius: 100%;
 }
-.team_section .team_members h2 {
-  font-size: clamp(1.5rem, 2.8vw, 3.5rem);
+.team_section .team_members .member_child h2 {
+  font-size: clamp(1rem, 2vw, 3rem);
   padding: 10px 0;
+  text-transform: uppercase;
 }
 .team_section .team_paragraph {
   width: 100%;

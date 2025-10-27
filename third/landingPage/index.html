@@ -5,222 +5,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-  if (localStorage.getItem('darkmode') === 'active') {
-    document.documentElement.classList.add('darkmode');
-  }
-</script>
-    <link rel="stylesheet" href="/style.css">
+        if (localStorage.getItem('darkmode') === 'active') {
+            document.documentElement.classList.add('darkmode');
+        }
+    </script>
+    <script type="text/javascript" src="index.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script type="text/javascript" src="index.js" defer></script>
+    <link rel="stylesheet" href="/style.css">
     <title>Landing Page</title>
 </head>
 
-<body class="darkmode">
-    <div>
-        <div class="main_container">
-            <!-- navbar -->
-            <div class="navbar_container">
-                <nav class="navbar">
-                    <h1>My Logo</h1>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                    <div class="navbar_buttons">
-                        <button id="theme_switch">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                                fill="#1f1f1f">
-                                <path
-                                    d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                                fill="#1f1f1f">
-                                <path
-                                    d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
-                            </svg>
-                        </button>
-                        <button class="getStarted_button">Get Started</button>
-                    </div>
-                    <div class="menu_svg">
+<body>
+    <div class="main_container">
+        <!-- navbar -->
+        <section class="navbar_container">
+            <nav class="navbar">
+                <h1>Logo</h1>
+                <ul id="nav_menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="navbar_buttons">
+                    <button id="theme_switch">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#fff">
-                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                            fill="#1f1f1f">
+                            <path
+                                d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#1f1f1f">
+                            <path
+                                d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
+                        </svg>
+                    </button>
+                    <button class="getStarted_button">Get Started</button>
+                </div>
+                <div class="mobile_menu_svg">
+                    <svg id="menu_open" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                        width="24px" fill="#fff">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg>
+                    <svg id="menu_close" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                        width="24px" fill="#fff">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg>
+                </div>
+            </nav>
+        </section>
+
+        <!-- hero section -->
+        <section class="hero_section">
+            <div class="hero_right">
+                <h3>welcome to our studio</h3>
+                <h1>it's nice to meet you</h1>
+                <button>tell me more</button>
+            </div>
+            <div class="hero_left">
+                <img src="/assets/img/1.jpg" alt="img">
+            </div>
+
+        </section>
+
+        <!-- services section -->
+        <section class="service_section">
+            <div class="service_headings">
+                <h1>Services</h1>
+                <p>We are providing following services</p>
+            </div>
+            <div class="services_inner">
+                <div class="services_mostInner">
+                    <div class="svg_div">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#fff">
+                            <path
+                                d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
                         </svg>
                     </div>
-                </nav>
+                    <h1>E-Commerce</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae accusamus numquam iure
+                        sit explicabo minus?</p>
+                </div>
+                <div class="services_mostInner">
+                    <div class="svg_div">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#fff">
+                            <path
+                                d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q32 0 61.5 4.5T600-862v102q0 33-23.5 56.5T520-680h-80v80q0 17-11.5 28.5T400-560h-80v80h240q17 0 28.5 11.5T600-440v120h40q27 0 47.5 16t28.5 40q39-44 61.5-98.5T800-480q0-11-1-20t-3-20h82q2 11 2 20v20q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm-40-82v-78q-33 0-56.5-23.5T360-320v-40L168-552q-3 18-5.5 36t-2.5 36q0 124 80.5 213.5T440-162Zm280-438q-17 0-28.5-11.5T680-640v-120q0-17 11.5-28.5T720-800v-40q0-33 23.5-56.5T800-920q33 0 56.5 23.5T880-840v40q17 0 28.5 11.5T920-760v120q0 17-11.5 28.5T880-600H720Zm40-200h80v-40q0-17-11.5-28.5T800-880q-17 0-28.5 11.5T760-840v40Z" />
+                        </svg>
+                    </div>
+                    <h1>Web Security</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae accusamus numquam iure
+                        sit explicabo minus?</p>
+                </div>
+                <div class="services_mostInner">
+                    <div class="svg_div">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#fff">
+                            <path
+                                d="M120-120v-520h200v-200h520v720H120Zm520-80h120v-560H400v120h240v440Zm-240 0h160v-360H400v360Zm-200 0h120v-360H200v360Zm440-440v80-80Zm-320 80Zm240 0Zm80-80Z" />
+                        </svg>
+                    </div>
+                    <h1>Responsive Design</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae accusamus numquam iure
+                        sit explicabo minus?</p>
+                </div>
+
             </div>
 
-            <!-- hero section -->
-            <div class="hero_section">
-                <div class="hero_right">
-                    <h3>welcome to our studio</h3>
-                    <h1>it's nice to meet you</h1>
-                    <button>tell me more</button>
+            <div>
+
+            </div>
+        </section>
+
+        <!-- portfolio section -->
+        <section class="portfolio_section">
+            <div class="portfolio_headings">
+                <h1>portfolio</h1>
+                <p>This is portfolio section</p>
+            </div>
+            <div class="portfolio_grid">
+                <div class="grid_child">
+                    <img src="/assets/img/portfolio/1.jpg" alt="img">
+                    <h5>Threads</h5>
+                    <p>Illustration</p>
                 </div>
-                <div class="hero_left">
-                    <img src="/assets/img/1.jpg" alt="img">
+                <div class="grid_child">
+                    <img src="/assets/img/portfolio/2.jpg" alt="img">
+                    <h5>Explore</h5>
+                    <p>Graphic Design</p>
+                </div>
+                <div class="grid_child">
+                    <img src="/assets/img/portfolio/3.jpg" alt="img">
+                    <h5>Finish</h5>
+                    <p>Identity</p>
+                </div>
+                <div class="grid_child">
+                    <img src="/assets/img/portfolio/4.jpg" alt="img">
+                    <h5>Lines</h5>
+                    <p>Branding</p>
+                </div>
+                <div class="grid_child">
+                    <img src="/assets/img/portfolio/5.jpg" alt="img">
+                    <h5>SoutWest</h5>
+                    <p>Website Design</p>
+                </div>
+                <div class="grid_child">
+                    <img src="/assets/img/portfolio/6.jpg" alt="img">
+                    <h5>Window</h5>
+                    <p>Photography</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- team section -->
+        <section class="team_section">
+            <div class="team_headings">
+                <h1>Our Amazing Team</h1>
+                <p>We have the best team</p>
+            </div>
+            <div class="team_members">
+                <div class="member_child">
+                    <img src="/assets//img/team/1.jpg" alt="">
+                    <h2>Mr. Smith</h2>
+                    <p>Lead Designer</p>
+                </div>
+                <div class="member_child">
+                    <img src="/assets//img/team/2.jpg" alt="">
+                    <h2>Parveen Anand</h2>
+                    <p>Lead Designer</p>
+                </div>
+                <div class="member_child">
+                    <img src="/assets//img/team/3.jpg" alt="">
+                    <h2>Michel J</h2>
+                    <p>Lead Designer</p>
+                </div>
+            </div>
+            <p class="team_paragraph"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis enim vel
+                eaque dignissimos dolor
+                a, ab repellat, saepe sint ea corporis alias ipsum odit dicta accusantium maxime fuga eum
+                laudantium?</p>
+        </section>
+
+        <!-- contact section -->
+        <section class="contact_section">
+            <div class="contact_heading">
+                <h1>Contact Us</h1>
+                <p>We are here for you always, contact us</p>
+            </div>
+            <div class="contact_flex">
+                <div class="flex_input">
+                    <input type="text" placeholder="Your Name*">
+                    <input type="text" placeholder="Your Email*">
+                    <input type="text" placeholder="Your Phone*">
+                </div>
+                <div class="flex_textarea">
+                    <textarea name="" id="" placeholder="Your Message"></textarea>
                 </div>
 
             </div>
+            <button>Send Message</button>
+        </section>
 
-            <!-- services section -->
-            <div class="service_section">
-                <div class="service_headings">
-                    <h1>Services</h1>
-                    <p>We are providing following services</p>
-                </div>
-                <div class="services_inner">
-                    <div class="services_mostInner">
-                        <div class="svg_div">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#fff">
-                                <path
-                                    d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
-                            </svg>
-                        </div>
-                        <h1>E-Commerce</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae accusamus numquam iure
-                            sit explicabo minus?</p>
-                    </div>
-                    <div class="services_mostInner">
-                        <div class="svg_div">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                                fill="#fff">
-                                <path
-                                    d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q32 0 61.5 4.5T600-862v102q0 33-23.5 56.5T520-680h-80v80q0 17-11.5 28.5T400-560h-80v80h240q17 0 28.5 11.5T600-440v120h40q27 0 47.5 16t28.5 40q39-44 61.5-98.5T800-480q0-11-1-20t-3-20h82q2 11 2 20v20q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm-40-82v-78q-33 0-56.5-23.5T360-320v-40L168-552q-3 18-5.5 36t-2.5 36q0 124 80.5 213.5T440-162Zm280-438q-17 0-28.5-11.5T680-640v-120q0-17 11.5-28.5T720-800v-40q0-33 23.5-56.5T800-920q33 0 56.5 23.5T880-840v40q17 0 28.5 11.5T920-760v120q0 17-11.5 28.5T880-600H720Zm40-200h80v-40q0-17-11.5-28.5T800-880q-17 0-28.5 11.5T760-840v40Z" />
-                            </svg>
-                        </div>
-                        <h1>Web Security</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae accusamus numquam iure
-                            sit explicabo minus?</p>
-                    </div>
-                    <div class="services_mostInner">
-                        <div class="svg_div">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                                fill="#fff">
-                                <path
-                                    d="M120-120v-520h200v-200h520v720H120Zm520-80h120v-560H400v120h240v440Zm-240 0h160v-360H400v360Zm-200 0h120v-360H200v360Zm440-440v80-80Zm-320 80Zm240 0Zm80-80Z" />
-                            </svg>
-                        </div>
-                        <h1>Responsive Design</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae accusamus numquam iure
-                            sit explicabo minus?</p>
-                    </div>
-
-                </div>
-
-                <div>
-
-                </div>
+        <!-- footer section -->
+        <section class="footer_section">
+            <div>
+                <p>© <span id="year"></span> All rights reserved</p>
             </div>
-
-            <!-- portfolio section -->
-            <div class="portfolio_section">
-                <div class="portfolio_headings">
-                    <h1>portfolio</h1>
-                    <p>This is portfolio section</p>
-                </div>
-                <div class="portfolio_grid">
-                    <div class="grid_child">
-                        <img src="/assets/img/portfolio/1.jpg" alt="img">
-                        <h5>Threads</h5>
-                        <p>Illustration</p>
-                    </div>
-                    <div class="grid_child">
-                        <img src="/assets/img/portfolio/2.jpg" alt="img">
-                        <h5>Explore</h5>
-                        <p>Graphic Design</p>
-                    </div>
-                    <div class="grid_child">
-                        <img src="/assets/img/portfolio/3.jpg" alt="img">
-                        <h5>Finish</h5>
-                        <p>Identity</p>
-                    </div>
-                    <div class="grid_child">
-                        <img src="/assets/img/portfolio/4.jpg" alt="img">
-                        <h5>Lines</h5>
-                        <p>Branding</p>
-                    </div>
-                    <div class="grid_child">
-                        <img src="/assets/img/portfolio/5.jpg" alt="img">
-                        <h5>SoutWest</h5>
-                        <p>Website Design</p>
-                    </div>
-                    <div class="grid_child">
-                        <img src="/assets/img/portfolio/6.jpg" alt="img">
-                        <h5>Window</h5>
-                        <p>Photography</p>
-                    </div>
-                </div>
+            <div><i class="fa-brands fa-facebook facebook"></i>
+                <i class="fa-brands fa-whatsapp whatsapp"></i>
+                <i class="fa-brands fa-x-twitter twitter"></i>
             </div>
-
-            <!-- team section -->
-            <div class="team_section">
-                <div class="team_headings">
-                    <h1>Our Amazing Team</h1>
-                    <p>We have the best team</p>
-                </div>
-                <div class="team_members">
-                    <div>
-                        <img src="/assets//img/team/1.jpg" alt="">
-                        <h2>Mr. Smith</h2>
-                        <p>Lead Designer</p>
-                    </div>
-                    <div>
-                        <img src="/assets//img/team/2.jpg" alt="">
-                        <h2>Parveen Anand</h2>
-                        <p>Lead Designer</p>
-                    </div>
-                    <div>
-                        <img src="/assets//img/team/3.jpg" alt="">
-                        <h2>Michel J</h2>
-                        <p>Lead Designer</p>
-                    </div>
-                </div>
-                <p class="team_paragraph"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis enim vel
-                    eaque dignissimos dolor
-                    a, ab repellat, saepe sint ea corporis alias ipsum odit dicta accusantium maxime fuga eum
-                    laudantium?</p>
-            </div>
-
-            <!-- contact section -->
-            <div class="contact_section">
-                <div class="contact_heading">
-                    <h1>Contact Us</h1>
-                    <p>We are here for you always, contact us</p>
-                </div>
-                <div class="contact_flex">
-                    <div class="flex_input">
-                        <input type="text" placeholder="Your Name*">
-                        <input type="text" placeholder="Your Email*">
-                        <input type="text" placeholder="Your Phone*">
-                    </div>
-                    <div class="flex_textarea">
-                        <textarea name="" id="" placeholder="Your Message"></textarea>
-                    </div>
-
-                </div>
-                <button>Send Message</button>
-            </div>
-
-            <!-- footer section -->
-            <div class="footer_section">
-                <div>
-                    <p>© <span id="year"></span> All rights reserved</p>
-                </div>
-                <div><i class="fa-brands fa-facebook facebook"></i>
-                    <i class="fa-brands fa-whatsapp whatsapp"></i>
-                    <i class="fa-brands fa-x-twitter twitter"></i>
-                </div>
-                <div>Privacy Policy</div>
-            </div>
-
-
-        </div>
+            <div>Privacy Policy</div>
+        </section>
     </div>
 </body>
 
