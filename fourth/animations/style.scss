@@ -214,3 +214,56 @@
     }
     }
 }
+
+// text change style
+.text_change{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    .intor_text{
+        margin-top: -2px;
+        margin-right: 12px;
+       }
+    .role_container{
+        overflow: hidden;
+        position: relative;
+        height: 32px;
+        .role{
+            display: block;
+            height: 100%;
+            color: #23c3a6da;
+            font-weight: 900;
+            animation: role-change 4s infinite;
+            @keyframes role-change {
+                10%{
+                    transform: translateY(-102%);
+                }
+                25%{
+                    transform: translateY(-100%);
+                }
+                35%{
+                    transform: translateY(-202%);
+                }
+                50%{
+                    transform: translateY(-200%);
+                }
+                60%{
+                    transform: translateY(-302%);
+                }
+                75%{
+                    transform: translateY(-300%);
+                }
+                85%{
+                    transform: translateY(-402%);
+                }
+                100%{
+                    transform: translateY(-400%);
+                }
+            }
+        }
+    }
+}
