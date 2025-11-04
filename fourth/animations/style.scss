@@ -267,3 +267,21 @@
         }
     }
 }
+
+// rotate style
+.rotate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    height: 70vh;
+    svg{
+    background: transparent;
+    animation: rotate 1s linear infinite;    
+    @keyframes rotate {
+        to{
+            transform: rotate(360deg);
+        }
+    }
+    }
+}
