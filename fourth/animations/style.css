@@ -324,4 +324,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.typewriter_container {
+  display: grid;
+  place-items: center;
+  height: 70vh;
+  background-color: #fff;
+  font-family: sans-serif;
+  font-size: 3em;
+  color: black;
+}
+.typewriter_container .typing {
+  width: 11ch;
+  overflow: hidden;
+  border-right: 3px solid black;
+  white-space: nowrap;
+  background-color: transparent;
+  animation: type 3s steps(13) infinite, blink 0.6s step-end infinite alternate;
+}
+@keyframes type {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }/*# sourceMappingURL=style.css.map */
