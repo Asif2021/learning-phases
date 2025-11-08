@@ -1,0 +1,10 @@
+$color_dark: rgb(50, 49, 49);
+$color_white: #fff;
+$color_offWhite: #f2f2f2;
+
+@mixin flexCenter ($justify, $dir){
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $dir;
+}

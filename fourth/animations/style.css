@@ -30,6 +30,35 @@
   }
 }
 
+.typewriter_container {
+  display: grid;
+  place-items: center;
+  height: 70vh;
+  background-color: rgb(50, 49, 49);
+  font-family: sans-serif;
+  font-size: 3em;
+  color: black;
+}
+.typewriter_container .typing {
+  width: 11ch;
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  color: #fff;
+  white-space: nowrap;
+  background-color: transparent;
+  animation: type 3s steps(13) infinite, blink 0.6s step-end infinite alternate;
+}
+@keyframes type {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 .scale_container {
   height: 70vh;
   background-color: #f2f2f2;
@@ -45,14 +74,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 2s ease;
+  transition: 1s ease;
 }
 .scale_container .box h3 {
   background-color: transparent;
 }
 .scale_container .box:hover {
-  scale: 5;
+  scale: 3;
   background-color: aqua;
+  border-radius: 15%;
+  transform: rotate(360deg);
 }
 .scale_container .box:hover h3 {
   display: none;
@@ -64,12 +95,13 @@
   align-items: center;
   gap: 0.2em;
   height: 70vh;
-  background-color: #fff;
+  background-color: rgb(50, 49, 49);
   overflow-x: hidden;
 }
 .leftRight h1 {
   animation: slide-in 3s 3;
-  background-color: #fff;
+  background: transparent;
+  color: #fff;
 }
 @keyframes slide-in {
   from {
@@ -112,6 +144,58 @@
   animation-delay: 0.1s;
 }
 
+.bouncing_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 70vh;
+  background-color: #fff;
+}
+.bouncing_container h1 {
+  letter-spacing: 12px;
+  background-color: transparent;
+  animation: bounce 1s linear infinite;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+}
+.bouncing_container h1:nth-child(1) {
+  animation-delay: 1s;
+}
+.bouncing_container h1:nth-child(2) {
+  animation-delay: 0.9s;
+}
+.bouncing_container h1:nth-child(3) {
+  animation-delay: 0.8s;
+}
+.bouncing_container h1:nth-child(4) {
+  animation-delay: 0.7s;
+}
+.bouncing_container h1:nth-child(5) {
+  animation-delay: 0.6s;
+}
+.bouncing_container h1:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.bouncing_container h1:nth-child(7) {
+  animation-delay: 0.4s;
+}
+.bouncing_container h1:nth-child(8) {
+  animation-delay: 0.3s;
+}
+.bouncing_container h1:nth-child(9) {
+  animation-delay: 0.2s;
+}
+.bouncing_container h1:nth-child(10) {
+  animation-delay: 0.1s;
+}
+
 .slider_container {
   display: flex;
   justify-content: center;
@@ -143,6 +227,117 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.animated_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 70vh;
+  background: rgb(50, 49, 49);
+  overflow: hidden;
+  position: relative;
+}
+.animated_button .button_inner {
+  position: relative;
+  padding: 20px 60px;
+  font-family: sans-serif;
+  font-size: 50px;
+  color: white;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  cursor: pointer;
+  transition: 2s;
+}
+.animated_button .button_inner:hover {
+  background: #EEEB18;
+  color: #000;
+  box-shadow: 0px 25px 50px #EEEB18;
+}
+.animated_button .button_inner:hover span {
+  background: #EEEB18;
+}
+.animated_button .button_inner::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+}
+.animated_button .button_inner span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, #1779ff, transparent);
+  animation: span1 2s linear infinite;
+}
+@keyframes span1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.animated_button .button_inner span:nth-child(2) {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #1779ff, transparent);
+  animation: span2 2s linear infinite;
+  animation-delay: 1;
+}
+@keyframes span2 {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.animated_button .button_inner span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to left, transparent, #1779ff, transparent);
+  animation: span3 2s linear infinite;
+}
+@keyframes span3 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.animated_button .button_inner span:nth-child(4) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #1779ff, transparent);
+  animation: span4 2s linear infinite;
+  animation-delay: 1;
+}
+@keyframes span4 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
 .flipCard_container {
@@ -197,7 +392,7 @@
   font-weight: 500;
   font-size: 1.5rem;
 }
-.text_change .intor_text {
+.text_change .intro_text {
   margin-top: -2px;
   margin-right: 12px;
 }
@@ -209,7 +404,7 @@
 .text_change .role_container .role {
   display: block;
   height: 100%;
-  color: rgba(35, 195, 166, 0.8549019608);
+  color: #0A0A59;
   font-weight: 900;
   animation: role-change 4s infinite;
 }
@@ -323,33 +518,5 @@
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-.typewriter_container {
-  display: grid;
-  place-items: center;
-  height: 70vh;
-  background-color: #fff;
-  font-family: sans-serif;
-  font-size: 3em;
-  color: black;
-}
-.typewriter_container .typing {
-  width: 11ch;
-  overflow: hidden;
-  border-right: 3px solid black;
-  white-space: nowrap;
-  background-color: transparent;
-  animation: type 3s steps(13) infinite, blink 0.6s step-end infinite alternate;
-}
-@keyframes type {
-  from {
-    width: 0;
-  }
-}
-@keyframes blink {
-  50% {
-    border-color: transparent;
   }
 }/*# sourceMappingURL=style.css.map */
