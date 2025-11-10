@@ -572,7 +572,6 @@
   height: 200px;
   width: 200px;
   perspective: 500px;
-  margin: 100px;
 }
 .cube_outer .cube_container .cube_inner {
   height: 200px;
@@ -590,7 +589,7 @@
   width: 200px;
   height: 200px;
   background-color: skyblue;
-  border: 1px solid black;
+  border: 1px solid rgba(50, 47, 47, 0.415);
   opacity: 0.5;
   font-size: 2rem;
   position: absolute;
@@ -620,4 +619,59 @@
   to {
     transform: rotate3d(1, 1, 0, 360deg);
   }
+}
+
+.card_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  height: 70vh;
+  background: rgb(50, 49, 49);
+  position: relative;
+}
+.card_container .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  height: 400px;
+  color: #fff;
+  border-radius: 16px;
+  position: absolute;
+  border: 1px solid skyblue;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+.card_container .card:hover {
+  transform: rotateZ(-10deg) translate(-110px);
+}
+.card_container .one {
+  z-index: 5;
+  right: 60%;
+  background-color: crimson;
+}
+.card_container .two {
+  z-index: 10;
+  right: 50%;
+  background-color: #1779ff;
+}
+.card_container .three {
+  z-index: 20;
+  right: 40%;
+  background-color: #18eebc;
+}
+.card_container .four {
+  z-index: 30;
+  right: 30%;
+  background-color: brown;
+}
+.card_container .five {
+  z-index: 40;
+  right: 20%;
+  background-color: chartreuse;
 }/*# sourceMappingURL=style.css.map */

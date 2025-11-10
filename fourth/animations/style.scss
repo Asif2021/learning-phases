@@ -684,9 +684,7 @@
         height: 200px;
         width: 200px;
         perspective: 500px;
-        margin: 100px;
-
-        .cube_inner {
+    .cube_inner {
             height: 200px;
             width: 200px;
             position: relative;
@@ -699,7 +697,7 @@
                 width: 200px;
                 height: 200px;
                 background-color: skyblue;
-                border: 1px solid black;
+                border: 1px solid rgba(50, 47, 47, 0.415);
                 opacity: 0.5;
                 font-size: 2rem;
                 position: absolute;
@@ -739,5 +737,57 @@
                 transform: rotate3d(1, 1, 0, 360deg);
             }
         }
+    }
+}
+
+// card hover
+.card_container{
+    @include flexCenter(center, row);
+    gap: 10px;
+    height: 70vh;
+    background: $color_dark;
+    position: relative;
+    
+    .card{
+        @include flexCenter(center, column);
+        gap: 10px;
+        width: 300px;
+        height: 400px;
+        color: $color_white;
+        border-radius: 16px;
+        position: absolute;
+        border: 1px solid skyblue;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease-out; 
+        &:hover{
+            transform:rotateZ(-10deg) translate(-110px);
+                       
+        }
+    }
+    .one{
+       z-index: 5;
+        right: 60%;
+        background-color:crimson; 
+    }
+    .two{
+       z-index: 10;
+        right: 50%;
+        background-color: #1779ff;
+    }
+    .three{
+        z-index: 20;
+        right: 40%;
+        background-color: #18eebc;
+    }
+    .four{
+        z-index: 30;
+        right: 30%;
+        background-color: brown;
+    }
+    .five{
+        z-index: 40;
+        right: 20%;
+        background-color: chartreuse;
     }
 }
