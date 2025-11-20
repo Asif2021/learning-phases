@@ -10,13 +10,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   gap: 1rem;
 }
 .loading_container h1 {
   background-color: #fff;
 }
 .loading_container span {
-  animation: fade 1s infinite reverse;
+  animation: fade 1.5s infinite reverse;
 }
 @keyframes fade {
   from {
@@ -53,8 +54,10 @@
 }
 
 .typewriter_container {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   height: 70vh;
   background-color: rgb(50, 49, 49);
   font-family: sans-serif;
@@ -82,11 +85,12 @@
 }
 
 .scale_container {
-  height: 70vh;
-  background-color: #f2f2f2;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  height: 70vh;
+  background-color: #f2f2f2;
 }
 .scale_container .box {
   width: 100px;
@@ -96,6 +100,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   transition: 1s ease;
 }
 .scale_container .box h3 {
@@ -115,6 +120,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   gap: 0.2em;
   height: 70vh;
   background-color: rgb(50, 49, 49);
@@ -343,6 +349,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   gap: 16px;
   height: 70vh;
 }
@@ -373,10 +380,11 @@
 }
 
 .flipCard_container {
-  perspective: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  perspective: 1000px;
   background-color: rgb(50, 49, 49);
   height: 70vh;
 }
@@ -419,6 +427,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   height: 70vh;
   font-family: "Times New Roman", Times, serif;
   font-weight: 500;
@@ -471,6 +480,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   background: rgb(50, 49, 49);
   height: 70vh;
   position: relative;
@@ -513,11 +523,12 @@
 }
 
 .border_container {
-  background-color: rgb(50, 49, 49);
-  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  background-color: rgb(50, 49, 49);
+  height: 70vh;
 }
 .border_container .border_card {
   background-color: rgba(121, 125, 128, 0.159);
@@ -526,6 +537,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   border-radius: 20px;
   position: relative;
   overflow: hidden;

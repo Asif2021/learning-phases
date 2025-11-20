@@ -11,9 +11,7 @@
 .loading_container {
     height: 70vh;
     background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   @include flexCenter(center, row);
     gap: 1rem;
 
     h1 {
@@ -21,7 +19,7 @@
     }
 
     span {
-        animation: fade 1s infinite reverse;
+        animation: fade 1.5s infinite reverse;
     }
 
     @keyframes fade {
@@ -70,8 +68,7 @@
 
 // typewriter effect style
 .typewriter_container {
-    display: grid;
-    place-items: center;
+   @include flexCenter(center, row);
     height: 70vh;
     background-color: $color_dark;
     font-family: sans-serif;
@@ -91,7 +88,7 @@
             from {
                 width: 0;
             }
-        }
+            }
 
         @keyframes blink {
             50% {
@@ -103,20 +100,17 @@
 
 // scale box style
 .scale_container {
+    @include flexCenter(center, row);
     height: 70vh;
     background-color: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 
     .box {
         width: 100px;
         height: 100px;
         background-color: #fff;
         border: 1px solid rgb(50, 49, 49);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter(center, row);
         transition: 1s ease;
 
         h3 {
@@ -139,9 +133,7 @@
 
 // text slide animation style
 .leftRight {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   @include flexCenter(center, row);
     gap: 0.2em;
     height: 70vh;
     background-color: $color_dark;
@@ -415,9 +407,7 @@
 
 // slider style
 .slider_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   @include flexCenter(center, row);
     gap: 16px;
     height: 70vh;
 
@@ -453,10 +443,8 @@
 
 // flip card style
 .flipCard_container {
+  @include flexCenter(center, row);
     perspective: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: $color_dark;
     height: 70vh;
 
@@ -502,9 +490,7 @@
 
 // text change style
 .text_change {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   @include flexCenter(center, row);
     height: 70vh;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
@@ -566,9 +552,7 @@
 
 // rotate style
 .rotate {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @include flexCenter(center, row);
     background: $color_dark;
     height: 70vh;
     position: relative;
@@ -620,19 +604,14 @@
 
 // animate border style
 .border_container {
+    @include flexCenter(center, row);
     background-color: rgb(50, 49, 49);
     height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .border_card {
+   .border_card {
         background-color: rgba(121, 125, 128, 0.159);
         width: 250px;
         height: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter(center, row);
         border-radius: 20px;
         position: relative;
         overflow: hidden;
