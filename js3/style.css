@@ -72,24 +72,30 @@ button:active {
     text-align: center;
     margin-top: 5rem;
     }
+.text{
+visibility: hidden;
+    }
 
 /* todo style */
 .todo_container{
      display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
     margin-top: 5rem;
     width: 100%;
 }
 .todo_inner{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
+    padding: 20px;
 }
 .todo_input{
     padding: 11px 24px;
+    flex: 1;
     border-radius: 5px;
     border: 1px solid whitesmoke;
     background-color: rgba(236, 238, 242, 0.985);
@@ -97,4 +103,60 @@ button:active {
 .todo_input:focus{
     border: 1px solid royalblue;
     outline: none;
+}
+
+#all_todos{
+    width: 100%;
+    padding: 6px 24px;
+}
+
+ul li{
+    width: 100%;
+    list-style: none;
+    cursor: pointer;
+    padding: 12px 8px 12px 50px;
+    position: relative;
+    font-size: 30px;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url('/uncheck.svg');
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+
+}
+ul li.checked{
+    text-decoration: line-through;
+    }
+ul li.checked::before{
+    background-image: url('/checked.svg');
+}
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    line-height: 40px;    
+    text-align: center;
+}
+
+
+@media screen and (max-width: 762px) {
+.main{
+    flex-direction: column;
+}
+.left{
+    width: 100%;
+}    
+.right{
+    width: 100%;
+}
 }

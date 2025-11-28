@@ -25,9 +25,8 @@
                 </div>
             </div>
             <div class="show_hide">
-                <h1 class="text">Hello World</h1>
-                <button onclick=show()>Show</button>
-                <button onclick=hide()>Hide</button>
+                <h1 id="show_hide">Hello World</h1>
+                <button id="showHide_button" onclick=showHide()>Show</button>
             </div>
         </div>
         <div class="right">
@@ -36,7 +35,7 @@
                     <input type="text" class="todo_input" placeholder="add todo" id="input" autocomplete="off">
                     <button onclick= addTodo()>Add todo</button>
                 </div>
-                <div id="all_todos"></div>
+                <ul id="all_todos"> </ul>
             </div>
         </div>
     </div>
