@@ -2,4 +2,39 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.main {
+  height: 100vh;
+  background-color: #EEEEF1;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 2.5rem;
+}
+.main .check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 28px;
+  gap: 0.5rem;
+}
+.main button {
+  padding: 10px 24px;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #86307b, #e61875);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  border: 1px solid royalblue;
+  margin: 0 5px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.main button:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.24);
 }/*# sourceMappingURL=style.css.map */
