@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment No.6</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="left">
+            <button onclick="showData()">Show Data</button>
+            <ul id="data_list"> </ul>
+        </div>
+        <div class="center">
+            <h1 id="counter">0</h1>
+            <div class="counter_btn">
+                <button onclick='start()' style="background-color: green; color: white;">Start</button>
+                <button onclick="reset()" style="background-color: red; color: white; ">Reset</button>
+                <button onclick="stop()" style="background-color: blue; color: white;">Stop</button>
+            </div>
+        </div>
+        <div class="right">
+            <button onclick="getData()">Get Data</button>
+            <p id="data"></p>
+        </div>
+    </div>
+
+
+    <script src="/index.js"></script>
+</body>
+
+</html>
